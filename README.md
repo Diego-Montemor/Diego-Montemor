@@ -1,17 +1,14 @@
-## Ola mundo! 👋
+## 👋 Hi, how are you? I'm Diego Montemor 👨‍💻
 
-## Diego Vianna Leite Montemor
-<!--
-**Diego-Montemor/Diego-Montemor** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Languages and Tools
+<img src="https://skillicons.dev/icons?i=cpp,git,html,css,lua,github,vscode,windows,linux" />
 
-Here are some ideas to get you started:
+## Learning
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<img src="https://skillicons.dev/icons?i=blender,powershell,py" />
+
+
+## Socials
+[![INSTAGRAM](https://skillicons.dev/icons?i=instagram)](https://www.instagram.com/diego_montemor/)
+[![LINKEDIN](https://go-skill-icons.vercel.app/api/icons?i=linkedin)](https://www.linkedin.com/in/diego-montemor-48091536a)
+[![GMAIL](https://skillicons.dev/icons?i=gmail)](mailto:montemordiego@gmail.com)
