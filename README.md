@@ -1,14 +1,21 @@
-## 👋 Hi, how are you? I'm Diego Montemor 👨‍💻
+## 👋 Hi, I'm Diego Montemor 👨‍💻
 
-## Languages and Tools
+Bem-vindo ao meu perfil! Sou apaixonado por tecnologia e desenvolvimento, sempre buscando aprender e me aprimorar.
+
+### 🚀 Sobre mim
+Sou estudante de Ciencia da computação, com interesse em [tecnologias, áreas de atuação ou objetivos].
+
+### 🛠️ Languages and Tools
 <img src="https://skillicons.dev/icons?i=cpp,git,html,css,lua,github,vscode,windows,linux" />
 
-## Learning
-
+### 📚 Learning
 <img src="https://skillicons.dev/icons?i=blender,powershell,py" />
 
+### 🌟 Projetos em destaque
+- [Projeto 1](link)
+- [Projeto 2](link)
 
-## Socials
+### 📫 Socials
 [![INSTAGRAM](https://skillicons.dev/icons?i=instagram)](https://www.instagram.com/diego_montemor/)
 [![LINKEDIN](https://go-skill-icons.vercel.app/api/icons?i=linkedin)](https://www.linkedin.com/in/diego-montemor-48091536a)
 [![GMAIL](https://skillicons.dev/icons?i=gmail)](mailto:montemordiego@gmail.com)
