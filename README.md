@@ -6,10 +6,10 @@ Bem-vindo ao meu perfil! Sou apaixonado por tecnologia e desenvolvimento, sempre
 Sou estudante de Ciencia da computação, com interesse em [tecnologias, áreas de atuação ou objetivos].
 
 ### 🛠️ Languages and Tools
-<img src="https://skillicons.dev/icons?i=cpp,git,lua,github,vscode,windows,linux" />
+<img src="https://skillicons.dev/icons?i=cpp,lua,git,github,vscode,blender,windows,linux" />
 
 ### 📚 Learning
-<img src="https://skillicons.dev/icons?i=blender,powershell,html,css" />
+<img src="https://skillicons.dev/icons?i=powershell,html,css" />
 
 ### 🌟 Projetos em destaque
 - [Projeto 1](link)
