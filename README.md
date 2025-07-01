@@ -6,10 +6,10 @@ Bem-vindo ao meu perfil! Sou apaixonado por tecnologia e desenvolvimento, sempre
 Sou estudante de Ciencia da computação, com interesse em banco de dados.
 
 ### 🛠️ Linguagens e ferramentas
-<img src="https://skillicons.dev/icons?i=cpp,lua,git,github,vscode,blender,windows,linux" />
+<img src="https://skillicons.dev/icons?i=cpp,lua,git,github,vscode,blender,windows" />
 
 ### 📚 Estou aprendendo
-<img src="https://skillicons.dev/icons?i=powershell,html,css" />
+<img src="https://skillicons.dev/icons?i=powershell,html,css,linux" />
 
 ### 🌟 [Portfolio](https://diego-montemor.github.io/Diego-Montemor/)
 
