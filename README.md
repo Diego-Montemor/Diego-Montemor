@@ -11,9 +11,9 @@ Sou estudante de Ciencia da computação, com interesse em banco de dados.
 ### 📚 Estou aprendendo
 <img src="https://skillicons.dev/icons?i=powershell,html,css" />
 
-### 🌟 Projetos em destaque
+### 🌟 [Projetos em destaque](https://diego-montemor.github.io/Diego-Montemor/)
 - [Projeto 1](link)
-- [Projeto 2](link)
+
 
 ### 📫 Socials
 [![INSTAGRAM](https://skillicons.dev/icons?i=instagram)](https://www.instagram.com/diego_montemor/)
