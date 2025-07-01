@@ -1,14 +1,14 @@
-## 👋 Hi, I'm Diego Montemor 👨‍💻
+## 👋 Olá, eu sou Diego Montemor 👨‍💻
 
 Bem-vindo ao meu perfil! Sou apaixonado por tecnologia e desenvolvimento, sempre buscando aprender e me aprimorar.
 
 ### 🚀 Sobre mim
-Sou estudante de Ciencia da computação, com interesse em [tecnologias, áreas de atuação ou objetivos].
+Sou estudante de Ciencia da computação, com interesse em banco de dados.
 
-### 🛠️ Languages and Tools
+### 🛠️ Linguagens e ferramentas
 <img src="https://skillicons.dev/icons?i=cpp,lua,git,github,vscode,blender,windows,linux" />
 
-### 📚 Learning
+### 📚 Estou aprendendo
 <img src="https://skillicons.dev/icons?i=powershell,html,css" />
 
 ### 🌟 Projetos em destaque
