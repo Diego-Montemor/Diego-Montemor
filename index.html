@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Dois Frames</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .title {
+        text-align: center;
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .frames-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        flex: 1;
+        width: 100%;
+        max-width: 1400px;
+        padding: 2rem;
+        margin-top: 2rem;
+      }
+
+      .frame-right-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .frame {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .frame:first-child {
+        width: 380px;
+        height: 280px;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .contact-frame {
+        width: 380px;
+        height: 180px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .contact-frame:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .contact-btn {
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .contact-btn svg {
+        width: 24px;
+        height: 24px;
+        fill: white;
+        transition: transform 0.3s ease;
+      }
+
+      .contact-btn:hover {
+        background: #5a6fd8;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      }
+
+      .contact-btn:hover svg {
+        transform: scale(1.1);
+      }
+
+      .contact-title {
+        color: #667eea;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .left-frames-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .frame:last-child {
+        width: 700px;
+        height: 580px;
+        justify-content: flex-start;
+        overflow-y: hidden;
+      }
+
+      .left-nav-buttons {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        justify-content: center;
+      }
+
+      .left-nav-btn {
+        background: #f8f9fa;
+        color: #667eea;
+        border: 2px solid #667eea;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+      }
+
+      .left-nav-btn:hover,
+      .left-nav-btn.active {
+        background: #667eea;
+        color: white;
+      }
+
+      .left-content-section {
+        width: 100%;
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 2rem;
+        height: 450px;
+        overflow-y: auto;
+        display: none;
+      }
+
+      .left-content-section.active {
+        display: block;
+      }
+
+      .profile-photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #667eea;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .profile-photo:hover {
+        transform: scale(1.05);
+      }
+
+      .profile-info {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .profile-name {
+        color: #667eea;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .profile-title {
+        color: #666;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .frame:last-child {
+        width: 700px;
+        height: 580px;
+        justify-content: flex-start;
+        overflow-y: hidden;
+      }
+
+      .nav-buttons {
+        display: none;
+      }
+
+      .content-container {
+        display: none;
+      }
+
+      .content-section {
+        display: none;
+      }
+
+      .nav-buttons {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .nav-btn {
+        background: #f8f9fa;
+        color: #667eea;
+        border: 2px solid #667eea;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+      }
+
+      .nav-btn:hover,
+      .nav-btn.active {
+        background: #667eea;
+        color: white;
+      }
+
+      .content-container {
+        display: flex;
+        gap: 2rem;
+        min-width: 2100px;
+        padding: 1rem 0;
+        align-items: flex-start;
+      }
+
+      .content-section {
+        min-width: 650px;
+        width: 650px;
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 2rem;
+        height: 350px;
+        overflow-y: auto;
+        flex-shrink: 0;
+      }
+
+      .section-title {
+        color: #667eea;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        border-bottom: 2px solid #667eea;
+        padding-bottom: 0.5rem;
+      }
+
+      .about-content {
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      .about-content h4 {
+        color: #667eea;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .skill-category {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+      }
+
+      .skill-category h4 {
+        color: #667eea;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .skill-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .skill-list li {
+        color: #666;
+        margin-bottom: 0.3rem;
+        padding-left: 1rem;
+        position: relative;
+      }
+
+      .skill-list li:before {
+        content: "•";
+        color: #667eea;
+        position: absolute;
+        left: 0;
+      }
+
+      .projects-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .project-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+      }
+
+      .project-item h4 {
+        color: #667eea;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .project-btn {
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .project-btn:hover {
+        background: #5a6fd8;
+        transform: translateY(-1px);
+      }
+
+      .project-btn svg {
+        width: 12px;
+        height: 12px;
+        fill: white;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        margin-top: 0.5rem;
+      }
+
+      .tech-badge {
+        background: #667eea;
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: 12px;
+        font-size: 0.7rem;
+      }
+
+      .frame:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .frame h2 {
+        color: #667eea;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .frame p {
+        color: #666;
+        line-height: 1.6;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .frame-icon {
+        font-size: 4rem;
+        color: #667eea;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn {
+        background: #667eea;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #5a6fd8;
+      }
+
+      /* Responsivo */
+      @media (max-width: 768px) {
+        .title {
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .frames-container {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .frame {
+          width: 100%;
+          max-width: 350px;
+          height: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frames-container">
+      <div class="left-frames-container">
+        <!-- Frame superior com perfil -->
+        <div class="frame">
+          <img
+            src="https://avatars.githubusercontent.com/u/211520708?v=4"
+            alt="Foto de Perfil"
+            class="profile-photo"
+          />
+          <div class="profile-info">
+            <h2 class="profile-name"><strong>Diego Montemor</strong></h2>
+            <p class="profile-title"><strong>Estudante de Ciência da Computação</strong></p>
+          </div>
+        </div>
+
+        <!-- Frame inferior com contatos -->
+        <div class="contact-frame">
+          <h3 class="contact-title">Entre em Contato</h3>
+          <div class="contact-buttons">
+            <button class="contact-btn" title="Email" onclick="contactAction('mailto:montemordiego@gmail.com')">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </button>
+            <button class="contact-btn" title="LinkedIn" onclick="contactAction('https://www.linkedin.com/in/diego-montemor-48091536a')">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </button>
+            <button class="contact-btn" title="GitHub" onclick="contactAction('https://github.com/Diego-Montemor')">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </button>
+            <button class="contact-btn" title="Instagram" onclick="contactAction('https://www.instagram.com/diego_montemor/')">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame-right-container">
+        <!-- Botões de navegação acima do frame da direita -->
+        <div class="left-nav-buttons">
+          <button class="left-nav-btn active" onclick="showLeftSection(0)">
+            Sobre Mim
+          </button>
+          <button class="left-nav-btn" onclick="showLeftSection(1)">
+            Linguagens & Ferramentas
+          </button>
+          <button class="left-nav-btn" onclick="showLeftSection(2)">
+            Projetos
+          </button>
+        </div>
+
+        <div class="frame">
+        <!-- Seção Sobre Mim -->
+        <div class="left-content-section active" id="left-section-0">
+          <h3 class="section-title">Sobre Mim</h3>
+          <div class="about-content">
+            <p>
+              Sou Diego Montemor, estudante de Ciência da Computação apaixonado
+              por tecnologia e inovação. Atualmente cursando o 1º semestre na
+              <strong>Universidade Federal de Alfenas (UNIFAL-MG)</strong>,
+              tenho me dedicado ao desenvolvimento de software e ao aprendizado
+              contínuo de novas tecnologias.
+            </p>
+
+            <h4>🎯 Objetivos</h4>
+            <p>
+              Busco oportunidades de estágio e projetos desafiadores que me
+              permitam aplicar meus conhecimentos e crescer profissionalmente na
+              área de desenvolvimento de software.
+            </p>
+
+            <h4>🚀 Interesses</h4>
+            <p>
+              Tenho especial interesse em inteligência artificial e
+              desenvolvimento de aplicações móveis.
+            </p>
+
+            <h4>🎮 Hobbies</h4>
+            <p>
+              Quando não estou programando, gosto de jogar videogames, pesquisar sobre
+              novas tecnologias, assistir séries de ficção científica e fazer
+              academia.
+            </p>
+          </div>
+        </div>
+
+        <!-- Seção Linguagens e Ferramentas -->
+        <div class="left-content-section" id="left-section-1">
+          <h3 class="section-title">Linguagens & Ferramentas</h3>
+          
+          <!-- Seção Domino -->
+          <div style="margin-bottom: 2rem;">
+            <h4 style="color: #667eea; font-size: 1.2rem; margin-bottom: 1rem; text-align: center; border-bottom: 1px solid #667eea; padding-bottom: 0.5rem;">
+              ✅ Domino
+            </h4>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4>💻 Linguagens</h4>
+                <ul class="skill-list">
+                  <li>Lua</li>
+                  <li>C++</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h4>🛠️ Ferramentas</h4>
+                <ul class="skill-list">
+                  <li>VS Code</li>
+                  <li>Blender</li>
+                  <li>Windows</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seção Aprendendo -->
+          <div>
+            <h4 style="color: #667eea; font-size: 1.2rem; margin-bottom: 1rem; text-align: center; border-bottom: 1px solid #667eea; padding-bottom: 0.5rem;">
+              📚 Aprendendo
+            </h4>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4>💻 Linguagens</h4>
+                <ul class="skill-list">
+                  <li>HTML5 & CSS3</li>
+                  <li>JavaScript (ES6+)</li>
+                  <li>TypeScript</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h4>🛠️ Ferramentas</h4>
+                <ul class="skill-list">
+                  <li>Git & GitHub</li>
+                  <li>Linux</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção Projetos -->
+        <div class="left-content-section" id="left-section-2">
+          <h3 class="section-title">Projetos</h3>
+          <div class="projects-grid">
+            <div class="project-item">
+              <h4>
+                🏣 Gestão de imóveis
+                <button class="project-btn" title="Ver no GitHub" onclick="contactAction('https://github.com/Diego-Montemor/Gestao-de-imoveis')">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Ver
+                </button>
+              </h4>
+              <p>
+                Sistema de Gerenciamento de Imóveis em C++ que permite 
+                cadastrar, buscar, listar, gerar estatísticas e excluir
+                imóveis de forma interativa. Os dados são armazenados
+                em arquivo texto e manipulados em um vetor, possibilitando
+                operações como busca por tipo, valor, localização e geração 
+                de relatórios detalhados sobre a base de imóveis. Ideal para 
+                portfólio de projetos acadêmicos e demonstração de manipulação
+                de arquivos, estruturas e menus em C++.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">C++</span>
+                <span class="tech-badge">VS Code</span>
+                <span class="tech-badge">Windows</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Função para mostrar seção específica no frame da direita
+      function showLeftSection(sectionIndex) {
+        // Esconder todas as seções
+        document
+          .querySelectorAll(".left-content-section")
+          .forEach((section) => {
+            section.classList.remove("active");
+          });
+
+        // Mostrar a seção selecionada
+        document
+          .getElementById(`left-section-${sectionIndex}`)
+          .classList.add("active");
+
+        // Atualizar botão ativo
+        document.querySelectorAll(".left-nav-btn").forEach((btn, index) => {
+          btn.classList.toggle("active", index === sectionIndex);
+        });
+      }
+
+      // Função para ações de contato
+      function contactAction(url) {
+        window.open(url, '_blank');
+      }
+
+      // Efeito de entrada para os frames
+      window.addEventListener("load", function () {
+        const frames = document.querySelectorAll(".frame, .contact-frame");
+        frames.forEach((frame, index) => {
+          setTimeout(() => {
+            frame.style.opacity = "1";
+            frame.style.transform = "translateY(0)";
+          }, index * 200);
+        });
+      });
+
+      // CSS inicial para animação
+      document.querySelectorAll(".frame, .contact-frame").forEach((frame) => {
+        frame.style.opacity = "0";
+        frame.style.transform = "translateY(30px)";
+        frame.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      });
+    </script>
+  </body>
+</html>
