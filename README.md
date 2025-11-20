@@ -5,7 +5,7 @@ Sou estudante de Ciencia da computação, com interesse em banco de dados.
 <img src="https://skillicons.dev/icons?i=c,cpp,lua,blender" />
 
 ### 📚 Estou aprendendo
-<img src="https://skillicons.dev/icons?i=,html,css" />
+<img src="https://skillicons.dev/icons?i=,html,css,js" />
 
 ### 🌟 [Portfolio](https://diego-montemor.github.io/Diego-Montemor/)
 
