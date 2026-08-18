@@ -2,13 +2,13 @@
 I am a Computer Science student at the Federal University of Alfenas.
 
 ### Proficient
-<img src="https://skillicons.dev/icons?i=c,cpp,git" />
+<img src="https://skillicons.dev/icons?i=c,cpp,git,haskell" />
 
 ### Familiar
-<img src="https://skillicons.dev/icons?i=html,css,js,py" />
+<img src="https://skillicons.dev/icons?i=html,css,js,py,java" />
 
 ### Estou aprendendo
-<img src="https://skillicons.dev/icons?i=java,haskell" />
+<img src="https://skillicons.dev/icons?i=r" />
 
 ### [Portfolio](https://diego-montemor.github.io/Diego-Montemor/)
 
