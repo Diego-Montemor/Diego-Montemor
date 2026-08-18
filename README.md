@@ -8,7 +8,7 @@ I am a Computer Science student at the Federal University of Alfenas.
 <img src="https://skillicons.dev/icons?i=html,css,js,py,java" />
 
 ### Estou aprendendo
-<img src="https://skillicons.dev/icons?i=r" />
+<img src="https://skillicons.dev/icons?i=aws,r" />
 
 ### [Portfolio](https://diego-montemor.github.io/Diego-Montemor/)
 

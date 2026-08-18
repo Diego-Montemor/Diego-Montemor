@@ -252,7 +252,7 @@ body {
 .progress-bar-fill {
     height: 100%;
     background-color: var(--accent);
-    width: 37.5%;
+    width: 50%;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(255, 71, 71, 0.5);
 }
@@ -456,9 +456,13 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.skill-item i {
+.skill-item i,
+.skill-item svg {
     font-size: 40px;
+    width: 40px;
+    height: 40px;
     color: var(--accent);
+    fill: var(--accent);
     margin-bottom: 12px;
 }
 
